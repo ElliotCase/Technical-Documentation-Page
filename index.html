@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Technical Documentation</title>
+</head>
+
+<body>
+    <div class="main-body">
+        <nav id="navbar">
+            <header>JS Documentation</header>
+            <ul>
+                <li><a class="nav-link" href="#Where_do_I_find_functions">Where do I find functions</a></li>
+                <li><a class="nav-link" href="#Built-in_browser_functions">Built-in browser functions</a></li>
+                <li><a class="nav-link" href="#Functions_versus_methods">Functions versus methods</a></li>
+                <li><a class="nav-link" href="#Invoking_functions">Invoking functions</a></li>
+                <li><a class="nav-link" href="#Anonymous_functions">Anonymous functions</a></li>
+            </ul>
+        </nav>
+
+
+
+
+
+        <main id="main-doc">
+            <section class="main-section" id="Where_do_I_find_functions">
+                <header class="title"> Where do I find functions
+                </header>
+                <p>Another essential concept in coding is functions, which allow you to store a piece of code that does
+                    a
+                    single task inside a defined block, and then call that code whenever you need it using a single
+                    short
+                    command — rather than having to type out the same code moltiple times. In this article we'll explore
+                    fundamental concepts behind functions such as basic syntax, how to invoke and define them, scope,
+                    and
+                    parameters.</p>
+                <p>Pretty much anytime you make use of a JavaScript structure that features a pair of parentheses — () —
+                    and
+                    you're not using a common built-in language structure like a for loop, while or do...while loop, or
+                    if...else statement, you are making use of a function.
+
+                </p>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+            <section class="main-section" id="Built-in_browser_functions">
+                <header> Built-in browser functions
+                </header>
+
+
+
+                <p>We've made use of functions built in to the browser a lot in this course. Every time we manipulated a
+                    text string, for example:
+
+                </p>
+
+                <code> <ol>
+                <li>let myText = 'I am a string';</li> 
+                <li>let newString = myText.replace('string', 'sausage');
+                </li>
+                <li>console.log(newString);</li>
+                <li>// the replace() string function takes a source string,</li>
+                <li>// and a target string and replaces the source string,</li>
+                <li>// with the target string, and returns the newly formed string</li>
+            </ol>
+            </code>
+                <p>Or every time we manipulated an array:</p>
+                <code>
+                <ol>
+                <li>let myArray = ['I', 'love', 'chocolate', 'frogs'];
+                </li> 
+                <li>let madeAString = myArray.join(' ');</li>
+                <li>console.log(madeAString);</li>
+                <li>// the join() function takes an array, joins</li>
+                <li>// all the array items together into a single</li>
+                <li>// string, and returns this new string</li>
+            </ol>
+            </code>
+                <p>...we were using a function!
+
+                </p>
+
+                <h4 class="note">Note: Feel free to enter these lines into your browser's JavaScript console to
+                    re-familiarize yourself with their functionality, if needed.
+
+                </h4>
+            </section>
+
+
+
+
+
+
+
+
+
+            <section class="main-section" id="Functions_versus_methods">
+                <header> Functions versus methods
+                </header>
+                <p>Programmers call functions that are part of objects methods. You don't need to learn about the inner
+                    workings of structured JavaScript objects yet — you can wait until our later module that will teach
+                    you
+                    all about the inner workings of objects, and how to create your own. For now, we just wanted to
+                    clear up
+                    any possible confusion of method versus function — you are likely to meet both terms as you look at
+                    the
+                    available related resources across the Web.
+
+                </p>
+                <p>You've also seen a lot of custom functions in the course so far — functions defined in your code, not
+                    inside the browser. Anytime you saw a custom name with parentheses straight after it, you were using
+                    a
+                    custom function. In our random-canvas-circles.html example (see also the full source code) from our
+                    loops article, we included a custom draw() function that looked like this:
+                </p>
+                <code>
+            <ol>
+                <li>function draw() {</li>
+                    <li>  ctx.clearRect(0,0,WIDTH,HEIGHT);</li>
+                    <li>    for (let i = 0; i < 100; i++) {</li>
+                        <li>ctx.beginPath();</li>
+                            <li>ctx.fillStyle = 'rgba(255,0,0,0.5)';</li>
+                                <li>ctx.arc(random(WIDTH), random(HEIGHT), random(50), 0, 2 * Math.PI);</li>
+                                    <li>ctx.fill();</li>
+                                    <li>}</li>
+                                    <li>}</li>
+                                </ol>
+            </code>
+                <p>This function draws 100 random circles inside a <code>&lt;canvas&gt;</code> Every time we want to do
+                    that,
+                    we
+                    can
+                    just invoke the function with this:
+
+                </p>
+                <code>
+            <ol>
+                <li>draw();
+                </li>
+            </ol>
+            </code>
+            </section>
+
+
+
+
+
+
+
+
+
+
+            <section class="main-section" id="Invoking_functions">
+                <header> Invoking functions
+                </header>
+                <p>You are probably clear on this by now, but just in case ... to actually use a function after it has
+                    been
+                    defined, you've got to run — or invoke — it. This is done by including the name of the function in
+                    the
+                    code somewhere, followed by parentheses.
+
+                </p>
+
+                <code>
+            <ol>
+                <li>function myFunction() {
+                </li>
+            <li>  alert('hello');
+            </li>
+            <li>}
+            </li>
+            <li> </li>
+            <li>myFunction();
+    </li>
+            <li>// calls the function once</li>
+        </ol>
+        </code>
+                <p class="note">This form of creating a function is also known as function declaration. It is always
+                    hoisted, so you can call function above function definition and it will work fine.
+
+                </p>
+            </section>
+
+
+
+
+
+
+
+
+            <section class="main-section" id="Anonymous_functions">
+                <header> Anonymous functions </header>
+                <p>You may see functions defined and invoked in slightly different ways. So far we have just created a
+                    function like so:</p>
+                <code>
+            <ol>
+                <li>function myFunction() {</li>
+                    <li>  alert('hello');</li>
+                    <li>}</li>
+                </ol>
+                    </code>
+                <p>But you can also create a function that doesn't have a name:</p>
+                <code>
+            <ol>
+                <li>function() {</li>
+                <li>  alert('hello');</li>
+                <li>}</li>
+            </ol>
+                </code>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </main>
+    </div>
+</body>
+
+</html>
